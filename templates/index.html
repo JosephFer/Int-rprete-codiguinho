@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codiguinho :)</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href=
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+<body>
+    <header>
+        <img src="../static/css/logo.png" class="logo">
+        <h1>Codiguinho</h1>
+    </header>
+    <main>
+        <center>
+        <div class="caja">
+            <div class="caja1">
+                <textarea class="text-box" cols="45" rows="20" placeholder="Ingrese el código aquí"></textarea>
+            </div>
+            <div class="caja2">
+                <textarea class="resultado" cols="45" rows="20" class="text" readonly> Resultadinhos </textarea>
+            </div>           
+        </div> 
+        </center>     
+        <div class="boton">
+            <button class="compile-button">Analizar Codiguinho </button>
+        </div>
+        <div class="acerca"> 
+            <h2>Documentación de Codiguinho</h2>
+            <ul>
+                <li><span>Palabras clave de tipos de datos:</span>
+                    <ul><br>
+                        <li>intnho: tipo de dato entero.</li>
+                        <li>floatinho : tipo de dato float.</li>
+                        <li>boolinho : tipo de dato boleano.</li>
+                        <li>stringho : tipo de dato String.</li>
+                        <li>verda : True.</li>
+                        <li>falso : False.</li><br> 
+                    </ul>
+                </li>
+                <li><span>Operadores matemáticos:</span>
+                    <ul><br>
+                        <li>+ :  suma</li>
+                        <li>- :  resta</li>
+                        <li>* :  multiplicación</li>
+                        <li>/ :  división</li>
+                        <li>% :  modulo</li><br>
+                    </ul>
+                </li>
+                <li><span>Operadores lógicos:</span>
+                    <ul><br>
+                        <li>&& : Compuerta lógica AND</li>
+                        <li> || :  Compuerta lógica OR</li>
+                        <li> ! : NOT</li><br>
+
+                    </ul>
+                </li>
+                <li><span>Palabras clave de control de flujo:</span>
+                    <ul><br>
+                        <li>Imprime : imprime en pantalla</li>
+                        <li>ifisinho : sentencia condicional if.</li>
+                        <li>elifsinho : sentencia condicional elif.</li>
+                        <li>elsinho : sentencia condicional else.</li>
+                        <li>darMole : sentencia ciclica while.</li>
+                        <li>daStop : break.</li>
+                        <li>volte : return. </li><br>
+                    </ul>
+                </li>
+                <li><span>Símbolos de control:</span>
+                    <ul><br>
+                        <li>$ : define el inicio de la declaración de una variable.</li>
+                        <li>; : define un salto de línea.</li>
+                        <li>= : define una asignación.</li>
+                        <li>“ ” : delimitan cadenas de caracteres (strings).</li>
+                        <li>{} : delimitan bloques de código.</li><br>
+                    </ul>
+                </li>
+            </ul>  
+        </div>  
+        
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../static/js/script.js"></script> 
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="../static/css/logo.png" alt="logo">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS </h2>
+                <p>Joseph Ferrer: Estudiante de la carrera ingeniería de sistemas en la universidad del Magdalena. </p>
+                <p>Juan Mosquera: Estudiante de la carrera ingeniería de sistemas en la universidad del Magdalena.</p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="https://www.facebook.com/joseph.ferrer.90281" class="fa fa-facebook"></a>
+                    <a href="https://www.linkedin.com/in/josephferrer0404/" class="fa fa-linkedin"></a>
+                    <a href="http://github.com/jamn0110/Lexer-codiguinho" class="fa fa-github"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Codiguinho</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+</body>
+
+</html>
