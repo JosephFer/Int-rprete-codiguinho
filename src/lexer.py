@@ -43,16 +43,22 @@ class Lexer(object):
           ('T_IGUAL', r'=='),
           ('T_FINDELINEA', r';'),
           ('T_LLAVEDERECHA', r'{'),
+          ('T_COMA', r','),
           ('T_LLAVEIZQUIERDA', r'}'),
           ('T_PDERECHA', r'\('),
           ('T_PIZQUIERDA', r'\)'),          
           #
-          ('T_ASIGNACION', r'=')
+          ('T_ASIGNACION', r'='),
+          
+          ('T_FUNCION', r'\#[a-zA-Z_][a-zA-Z0-9_]*'),
+
         ]
 
     def tokenizar(self):
         tokensEncontrados = []
-        palabras = re.findall(r'\$\w+|\w+|\S', self.sourceCode)
+        
+        #
+        palabras = re.findall(r'\$\w+|\#\w+|\w+|\S', self.sourceCode)
         
         for palabra in palabras:
             for token, patron in self.tokens:
