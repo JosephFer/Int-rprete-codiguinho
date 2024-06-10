@@ -66,27 +66,3 @@ def t_error(t):
 
 # Construcción del lexer
 lexer = lex.lex()
-
-
-content = """
-	boolinho $variable = verda;
-    darMole ($variable) {
-		$variable = falso;
-        imprime("hola");
-    };
-    
-    faca $numero in rank(0, 10, 1){
-		imprime("hola);
-    };
-    
-    $i = 0;
-    facaMole {
-    	imprime($i);
-        $i = $i + 1;
-        } darMole($i < 5);
-
-   """
-
-lexer.input(content)
-for token in lexer:
-    print(f"Token: {token.type}, Valor: {token.value}, Línea: {token.lineno}")
