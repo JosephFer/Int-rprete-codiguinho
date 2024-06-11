@@ -197,10 +197,7 @@ def parse_code(code):
 
 if __name__ == "__main__":
     content = """
-    $x = 10;
-    $a = 5;
-    $c = $x + $a;
-    imprime($c);
+    imprime(2);
     """
     prueba = parse_code(content)
     print(prueba)

@@ -7,9 +7,7 @@ def main():
     # Código de ejemplo en codiguinho
     code = """
     $a = 1;
-    $b = 2;
-    $c = $a + $b;
-    imprime($c);
+    imprime(1);
     """
 
     # Tokenización y parseo
