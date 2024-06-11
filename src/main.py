@@ -1,19 +1,26 @@
+from lexer import lexer
+from parser_1 import parser
+from Interpreter import Interpreter
 
-import src.lexer
 
-def codigo(text):
-    content = text
-    print(content)
+def main():
+    # Código de ejemplo en codiguinho
+    code = """
+    $a = 1;
+    $b = 2;
+    $c = $a + $b;
+    imprime($c);
+    """
 
-    #Lexer 
-    lex = src.lexer.Lexer(content)
-
-    tokens = lex.tokenizar()
-    let = ""
+    # Tokenización y parseo
+    lexer.input(code)
+    ast = parser.parse(code, lexer=lexer)
     
-    for token in tokens:
-        let += "Lexema: " + token[0] + ' --> ' + "Token: " +token[1] + "\n"
-        if token[1] == 'T_FINDELINEA':
-            let += "\n"
-    let += "\n"  
-    return let   
+    # Interpretación del AST
+    interpreter = Interpreter()
+    interpreter.interpret(ast)
+
+if __name__ == "__main__":
+    main()
+
+

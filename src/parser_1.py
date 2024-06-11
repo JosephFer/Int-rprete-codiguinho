@@ -57,6 +57,46 @@ def p_expression(p):
                   | expression T_OR expression'''
     if len(p) == 2:
         p[0] = p[1]
+    elif p[2] == '+':
+        p[0] = p[1] + p[3]
+    elif p[2] == '-':
+        p[0] = p[1] - p[3]
+    elif p[2] == '*':
+        p[0] = int(p[1]) * int(p[3])
+    elif p[2] == '/':
+        p[0] = int(p[1]) / int(p[3])
+    
+    elif len(p) == 4 and p[2] == '<':  # Verificar la longitud de p y la operación
+        if p[1] < p[3]:
+            p[0] = True
+        else:
+            p[0] = False
+        
+    elif len(p) == 4 and p[2] == '>':  
+        if p[1] > p[3]:
+            p[0] = True
+        else:
+            p[0] = False
+    
+    elif len(p) == 4 and p[2] == '<=':  
+        if p[1] <= p[3]:
+            p[0] = True
+        else:
+            p[0] = False
+    
+    elif len(p) == 4 and p[2] == '>=':  
+        if p[1] >= p[3]:
+            p[0] = True
+        else:
+            p[0] = False
+
+    elif p[2] == "AND":
+        p[0] = p[1] and p[3]
+
+    elif p[2] == "OR":
+        p[0] = p[1] or p[3]
+    elif p[2] == "NOT":
+        p[0] =  p[1] is not p[3]
     else:
         p[0] = (p[2], p[1], p[3])
 
@@ -154,3 +194,13 @@ parser = yacc.yacc()
 def parse_code(code):
     lexer.input(code)
     return parser.parse(code, lexer=lexer)
+
+if __name__ == "__main__":
+    content = """
+    $x = 10;
+    $a = 5;
+    $c = $x + $a;
+    imprime($c);
+    """
+    prueba = parse_code(content)
+    print(prueba)
